@@ -1,4 +1,8 @@
+# CFS default
 Makefile
 build
 /sample_defs
 .DS_Store
+
+# Editor files
+.vscode/**
