@@ -9,6 +9,7 @@ env:
   SIMULATION: native
   OMIT_DEPRECATED: true
   ENABLE_UNIT_TESTS: true
+  CTEST_OUTPUT_ON_FAILURE: true
   REPO_NAME: ${{ github.event.repository.name }}
 
 jobs:
@@ -29,6 +30,7 @@ jobs:
   build-cfs-omit-deprecated-true:
     name: Build    
     needs: check-for-duplicates
+    if: ${{ needs.check-for-duplicates.outputs.should_skip != 'true' }}
     runs-on: ubuntu-18.04
 
     strategy:
